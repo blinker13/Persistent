@@ -13,9 +13,9 @@ public class Stack {
 
     //MARK: -
 
-	public init(model:Model = Model.main()) {
-		self.coordinator = Coordinator(managedObjectModel:model)
-		self.mainContext = Context(concurrencyType:.MainQueueConcurrencyType)
-		self.mainContext.persistentStoreCoordinator = self.coordinator
-	}
+    public init(model:Model = Model.main()) {
+        self.coordinator = Coordinator(managedObjectModel:model)
+        self.mainContext = Context(concurrencyType:.MainQueueConcurrencyType)
+        self.mainContext.persistentStoreCoordinator = self.coordinator
+    }
 }

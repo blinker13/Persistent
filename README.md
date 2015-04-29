@@ -1,6 +1,6 @@
-#CoreDataKit
+#Persistent
 
-CoreDataKit is a small convenience wrapper framework written in Swift.
+Persistent is a small convenience wrapper around CoreData written in Swift.
 
 
 ## The Stack
