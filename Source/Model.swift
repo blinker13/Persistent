@@ -15,7 +15,7 @@ extension Model {
 
     //MARK: -
 
-    public convenience init?(models:Model ...) {
+    public convenience init?(_ models:Model ...) {
         self.init(byMergingModels:models)
     }
 }
