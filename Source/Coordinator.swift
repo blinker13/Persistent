@@ -16,7 +16,14 @@ public extension Coordinator {
     }
 
     public func removeStore(store:Store) {
-        
+
+        if let url = store.url {
+            if let handle = self.persistentStoreForURL(url) {
+                var error:NSError?
+                self.removePersistentStore(handle, error:&error)
+                assert(error == nil, "Removing the store failed")
+            }
+        }
     }
 
     //MARK: - Private
