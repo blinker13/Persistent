@@ -5,7 +5,7 @@ Persistent is a small convenience wrapper around CoreData written in Swift.
 
 ## Stack
 
-The `Stack` class provides a simple interface to create a simple Core Data Stack with only a few lines of code. In the following example a fully functional stack is instanciated, popullated with a persistent store and made into a shared instance.
+The `Stack` class provides a simple interface to create a simple Core Data Stack with only a few lines of code. A newly created `Stack` automatically creates a `Coordinator` -> `NSPersistentStoreCoordinator` and a `Context` -> `NSManagedObjectContext` for access on the main thread.
 
 ### Instantiation
 
@@ -14,14 +14,16 @@ A `Stack` will by default initialize with a merged Model from all Bundles but ca
 ```swift
 let stack = Stack()
 
-let model = NSManagedObjectModel()
+let model = Model()
 let stack = Stack(model:model)
 ```
 
-A newly created `Stack` automatically creates a `Coordinator` -> `NSPersistentStoreCoordinator` and a `Context` -> `NSManagedObjectContext` for access on the main thread
+Only a `Store` is missing to make it fully functional.
 
 
 ## Store
+
+The `Store` is kind of an abstract representation for a `NSPersistentStore`. 
 
 
 ## DAO
