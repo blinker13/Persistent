@@ -16,6 +16,22 @@ public struct Store {
     public var autoMigration = true
     public var readonly = false
 
+    //MARK: -
+
+    public init(url:URL? = URL.defaultStoreURL()) {
+        self.url = url
+    }
+
+    //MARK: - Protected
+
+    init(handle:NSPersistentStore) {
+        self.type = Type.withString(handle.type)
+        self.url = handle.URL
+        self.configuration = handle.configurationName
+        //TODO: extract the settings
+//        self.settings =
+    }
+
     var options:Options {
         var options = Options()
 
@@ -31,20 +47,5 @@ public struct Store {
         }
 
         return options
-    }
-
-    //MARK: -
-
-    init(url:URL? = URL.defaultStoreURL()) {
-        self.url = url
-    }
-
-    //MARK: - Private
-
-    init(handle:NSPersistentStore) {
-        self.type = Type.withString(handle.type)
-        self.url = handle.URL
-        self.configuration = handle.configurationName
-//        self.settings =
     }
 }
