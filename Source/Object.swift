@@ -8,7 +8,6 @@ extension Object {
     public typealias ID = NSManagedObjectID
 
     public static var entityName:String {
-//    public static func entityName() -> String {
         let name = NSStringFromClass(self)
         let nameParts = name.componentsSeparatedByString(".")
         return nameParts.last!

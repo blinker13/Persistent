@@ -10,3 +10,4 @@ public typealias Model = NSManagedObjectModel
 public typealias Object = NSManagedObject
 public typealias Query = NSPredicate
 public typealias Request = NSFetchRequest
+public typealias Store = NSPersistentStore
