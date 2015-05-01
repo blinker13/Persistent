@@ -22,20 +22,4 @@ public extension Context {
 
         center.removeObserver(context, name:name, object:self)
     }
-
-    //MARK: -
-
-    public func objectIDForURI(uri:Object.URI) -> Object.ID? {
-        let coordinator = self.persistentStoreCoordinator
-        return coordinator?.managedObjectIDForURIRepresentation(uri)
-    }
-
-    public func existingObjectWithURI<O:Object>(uri:Object.URI) -> O? {
-
-        if let objectID = self.objectIDForURI(uri) {
-            return self.existingObjectWithID(objectID, error:nil) as? O
-        }
-
-        return nil
-    }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BD1B22E61AF17ED900C87782 /* Test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD1B22E41AF17ED900C87782 /* Test.xcdatamodeld */; };
 		BD4BDD6D1AEEE8780076F70F /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4BDD6C1AEEE8780076F70F /* DAO.swift */; };
+		BD72FDF31AF2F54600972DC0 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD72FDF21AF2F54600972DC0 /* Entity.swift */; };
 		BD9B65E41AF1869D009A2101 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9B65E31AF1869D009A2101 /* Store.swift */; };
 		BDCBF5DE1AF02CB400B96E98 /* QueryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBF5DB1AF02C8600B96E98 /* QueryTests.swift */; };
 		BDCBF5E41AF02DB000B96E98 /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBF5DF1AF02DB000B96E98 /* Fixtures.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		BD1B22E51AF17ED900C87782 /* Test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Test.xcdatamodel; sourceTree = "<group>"; };
 		BD4BDD6C1AEEE8780076F70F /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
+		BD72FDF21AF2F54600972DC0 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		BD9B65E31AF1869D009A2101 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		BDCBF5DB1AF02C8600B96E98 /* QueryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryTests.swift; sourceTree = "<group>"; };
 		BDCBF5DF1AF02DB000B96E98 /* Fixtures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fixtures.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				BDE2ABD91AEB95CE00D9D8CF /* Context.swift */,
 				BDE2ABDA1AEB95CE00D9D8CF /* Coordinator.swift */,
 				BD4BDD6C1AEEE8780076F70F /* DAO.swift */,
+				BD72FDF21AF2F54600972DC0 /* Entity.swift */,
 				BDE2ABEF1AEB969300D9D8CF /* Model.swift */,
 				BDE2ABDE1AEB95CE00D9D8CF /* Object.swift */,
 				BDE2ABE01AEB95CE00D9D8CF /* Stack.swift */,
@@ -293,6 +296,7 @@
 				BDE2ABE51AEB95CE00D9D8CF /* Coding.swift in Sources */,
 				BDE2AC001AED803100D9D8CF /* Comparison.swift in Sources */,
 				BDE2ABF61AED774700D9D8CF /* Type.swift in Sources */,
+				BD72FDF31AF2F54600972DC0 /* Entity.swift in Sources */,
 				BDE2ABEB1AEB95CE00D9D8CF /* Info.swift in Sources */,
 				BDE2ABEC1AEB95CE00D9D8CF /* URL.swift in Sources */,
 				BDE2ABEA1AEB95CE00D9D8CF /* Stack.swift in Sources */,

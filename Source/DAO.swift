@@ -9,7 +9,8 @@ public struct DAO {
     //MARK: -
 
     public func insert<O:Object>(values:[String : AnyObject]) -> O {
-        let object:O = NSEntityDescription.insertNewObjectForEntityForName(O.entityName, inManagedObjectContext:self.context) as! O
+        let entity = Entity.entityForName(O.entityName, inManagedObjectContext:self.context)!
+        let object:O = O(entity:entity, insertIntoManagedObjectContext:self.context)
         object.setValuesForKeysWithDictionary(values)
         return object
     }
@@ -38,6 +39,20 @@ public struct DAO {
     public func fetch<O:Object>(query:Query) -> [O]? {
         let request = O.request(query)
         return self.fetch(request)
+    }
+
+    public func fetch<O:Object>(id:Object.ID) -> O? {
+        return self.context.existingObjectWithID(id, error:nil) as? O
+    }
+
+    public func fetch<O:Object>(uri:Object.URI) -> O? {
+        let coordinator = self.context.persistentStoreCoordinator
+
+        if let id = coordinator?.managedObjectIDForURIRepresentation(uri) {
+            return self.fetch(id)
+        }
+
+        return nil
     }
 
     public func first<O:Object>(_ query:Query? = nil) -> O? {
