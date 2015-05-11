@@ -8,6 +8,22 @@ public extension Context {
         return DAO(context:self)
     }
 
+    //MARK: -
+
+    public func sync(block:(dao:DAO) -> Bool) {
+        self.performBlockAndWait {
+            block(dao:self.dao)
+        }
+    }
+
+    public func async(block:(dao:DAO) -> Bool) {
+        self.performBlock {
+            block(dao:self.dao)
+        }
+    }
+
+    //MARK: -
+
     public func startForwardingChanges(context:Context) {
         let action = Selector("mergeChangesFromContextDidSaveNotification:")
         let name = NSManagedObjectContextDidSaveNotification;

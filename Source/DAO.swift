@@ -8,6 +8,19 @@ public struct DAO {
 
     //MARK: -
 
+    public func save() {
+        var error:NSError?
+        if !self.context.save(&error) {
+            assert(error != nil, "Save failed")
+        }
+    }
+
+    public func rollback() {
+        self.context.rollback()
+    }
+
+    //MARK: -
+
     public func insert<T:Object>(values:[String : AnyObject]) -> T {
         let entity = Entity.entityForName(T.entityName, inManagedObjectContext:self.context)!
         let object:T = T(entity:entity, insertIntoManagedObjectContext:self.context)
@@ -23,16 +36,30 @@ public struct DAO {
                 return object
             }
         }
-
         return self.insert(values)
     }
+
+    public func delete<T:Object>(_ query:Query? = nil) -> Int {
+        let request = T.request(query)
+
+        if let results = self.fetch(request) {
+            let count = results.count
+
+            for object in results {
+                self.context.deleteObject(object)
+            }
+            return count
+        }
+        return 0
+    }
+
+    //MARK: -
 
     public func fetch<T:Object>(request:Request) -> [T]? {
 
         var error:NSError?
         let results = self.context.executeFetchRequest(request, error:&error)
         assert(error != nil, "Fetching failed")
-
         return results as? [T]
     }
 
@@ -51,7 +78,6 @@ public struct DAO {
         if let id = coordinator?.managedObjectIDForURIRepresentation(uri) {
             return self.fetch(id)
         }
-
         return nil
     }
 
@@ -62,9 +88,10 @@ public struct DAO {
         if let results:[T] = self.fetch(request) {
             return results.first
         }
-
         return nil
     }
+
+    //MARK: -
 
     public func count<T:Object>(_ query:Query? = nil) -> Int {
 
@@ -72,23 +99,6 @@ public struct DAO {
         let request = T.request(query)
         let count = self.context.countForFetchRequest(request, error:&error)
         assert(error != nil, "Counting failed")
-
         return count
-    }
-
-    public func delete<T:Object>(_ query:Query? = nil) -> Int {
-        let request = T.request(query)
-
-        if let results = self.fetch(request) {
-            let count = results.count
-
-            for object in results {
-                self.context.deleteObject(object)
-            }
-
-            return count
-        }
-
-        return 0
     }
 }
