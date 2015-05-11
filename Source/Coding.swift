@@ -11,7 +11,7 @@ public extension NSCoder {
     public func decodeManagedObject<O:Object>(key:String, context:Context) -> O? {
         
         if let uri = self.decodeObjectForKey(key) as! O.URI? {
-            return context.existingObjectWithURI(uri)
+            return context.dao.fetch(uri)
         }
         
         return nil

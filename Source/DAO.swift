@@ -8,18 +8,18 @@ public struct DAO {
 
     //MARK: -
 
-    public func insert<O:Object>(values:[String : AnyObject]) -> O {
-        let entity = Entity.entityForName(O.entityName, inManagedObjectContext:self.context)!
-        let object:O = O(entity:entity, insertIntoManagedObjectContext:self.context)
+    public func insert<T:Object>(values:[String : AnyObject]) -> T {
+        let entity = Entity.entityForName(T.entityName, inManagedObjectContext:self.context)!
+        let object:T = T(entity:entity, insertIntoManagedObjectContext:self.context)
         object.setValuesForKeysWithDictionary(values)
         return object
     }
 
-    public func lazy<O:Object>(values:[String : AnyObject]) -> O {
+    public func lazy<T:Object>(values:[String : AnyObject]) -> T {
 
         if values.count > 0 {
             let filter = Query.require(values)
-            if let object:O = self.first(filter) {
+            if let object:T = self.first(filter) {
                 return object
             }
         }
@@ -27,25 +27,25 @@ public struct DAO {
         return self.insert(values)
     }
 
-    public func fetch<O:Object>(request:Request) -> [O]? {
+    public func fetch<T:Object>(request:Request) -> [T]? {
 
         var error:NSError?
         let results = self.context.executeFetchRequest(request, error:&error)
         assert(error != nil, "Fetching failed")
 
-        return results as? [O]
+        return results as? [T]
     }
 
-    public func fetch<O:Object>(query:Query) -> [O]? {
-        let request = O.request(query)
+    public func fetch<T:Object>(query:Query) -> [T]? {
+        let request = T.request(query)
         return self.fetch(request)
     }
 
-    public func fetch<O:Object>(id:Object.ID) -> O? {
-        return self.context.existingObjectWithID(id, error:nil) as? O
+    public func fetch<T:Object>(id:Object.ID) -> T? {
+        return self.context.existingObjectWithID(id, error:nil) as? T
     }
 
-    public func fetch<O:Object>(uri:Object.URI) -> O? {
+    public func fetch<T:Object>(uri:Object.URI) -> T? {
         let coordinator = self.context.persistentStoreCoordinator
 
         if let id = coordinator?.managedObjectIDForURIRepresentation(uri) {
@@ -55,29 +55,29 @@ public struct DAO {
         return nil
     }
 
-    public func first<O:Object>(_ query:Query? = nil) -> O? {
-        let request = O.request(query)
+    public func first<T:Object>(_ query:Query? = nil) -> T? {
+        let request = T.request(query)
         request.fetchLimit = 1;
 
-        if let results:[O] = self.fetch(request) {
+        if let results:[T] = self.fetch(request) {
             return results.first
         }
 
         return nil
     }
 
-    public func count<O:Object>(_ query:Query? = nil) -> Int {
+    public func count<T:Object>(_ query:Query? = nil) -> Int {
 
         var error:NSError?
-        let request = O.request(query)
+        let request = T.request(query)
         let count = self.context.countForFetchRequest(request, error:&error)
         assert(error != nil, "Counting failed")
 
         return count
     }
 
-    public func delete<O:Object>(_ query:Query? = nil) -> Int {
-        let request = O.request(query)
+    public func delete<T:Object>(_ query:Query? = nil) -> Int {
+        let request = T.request(query)
 
         if let results = self.fetch(request) {
             let count = results.count
