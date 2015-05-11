@@ -15,6 +15,17 @@ extension Model {
 
     //MARK: -
 
+    public convenience init?(name:String, bundle:NSBundle = NSBundle.mainBundle()) {
+
+        if let url = bundle.URLForResource(name, withExtension:"") {
+            self.init(contentsOfURL:url)
+
+        } else {
+            self.init()
+            return nil
+        }
+    }
+
     public convenience init?(_ models:Model ...) {
         self.init(byMergingModels:models)
     }
