@@ -2,7 +2,7 @@
 import CoreData
 
 
-public struct DAO {
+public struct DAO : Equatable {
 
     let context:Context
 
@@ -11,7 +11,7 @@ public struct DAO {
     public func save() {
         var error:NSError?
         if !self.context.save(&error) {
-            assert(error != nil, "Save failed")
+            assert(error == nil, "Save failed")
         }
     }
 
@@ -59,7 +59,7 @@ public struct DAO {
 
         var error:NSError?
         let results = self.context.executeFetchRequest(request, error:&error)
-        assert(error != nil, "Fetching failed")
+        assert(error == nil, "Fetching failed")
         return results as? [T]
     }
 
@@ -98,7 +98,11 @@ public struct DAO {
         var error:NSError?
         let request = T.request(query)
         let count = self.context.countForFetchRequest(request, error:&error)
-        assert(error != nil, "Counting failed")
+        assert(error == nil, "Counting failed")
         return count
     }
+}
+
+public func ==(lhs:DAO, rhs:DAO) -> Bool {
+    return lhs.context == rhs.context
 }

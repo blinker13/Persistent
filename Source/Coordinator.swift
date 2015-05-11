@@ -2,7 +2,7 @@
 import CoreData
 
 
-public extension Coordinator {
+extension Coordinator {
 
     func createStoreDirectory(info:Store.Info) {
         if let url = info.url?.URLByDeletingLastPathComponent {

@@ -3,7 +3,7 @@ import XCTest
 import Persistent
 
 
-class CoderTests: XCTestCase {
+class CodingTests: XCTestCase {
 
 //	func testEncoding() {
 //		let stack = self.fixtureStack

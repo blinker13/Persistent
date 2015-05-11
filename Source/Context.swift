@@ -4,19 +4,21 @@ import CoreData
 
 public extension Context {
 
+    public typealias Handler = (dao:DAO) -> Void
+
     public var dao:DAO {
         return DAO(context:self)
     }
 
     //MARK: -
 
-    public func sync(block:(dao:DAO) -> Bool) {
+    public func sync(block:Handler) {
         self.performBlockAndWait {
             block(dao:self.dao)
         }
     }
 
-    public func async(block:(dao:DAO) -> Bool) {
+    public func async(block:Handler) {
         self.performBlock {
             block(dao:self.dao)
         }
