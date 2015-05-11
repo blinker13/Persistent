@@ -10,11 +10,11 @@
 		BD1B22E61AF17ED900C87782 /* Test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD1B22E41AF17ED900C87782 /* Test.xcdatamodeld */; };
 		BD4BDD6D1AEEE8780076F70F /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4BDD6C1AEEE8780076F70F /* DAO.swift */; };
 		BD9B65E41AF1869D009A2101 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9B65E31AF1869D009A2101 /* Store.swift */; };
-		BDCBF5DE1AF02CB400B96E98 /* QueryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBF5DB1AF02C8600B96E98 /* QueryTests.swift */; };
+		BDCBF5DE1AF02CB400B96E98 /* Query.Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBF5DB1AF02C8600B96E98 /* Query.Tests.swift */; };
 		BDCBF5E41AF02DB000B96E98 /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBF5DF1AF02DB000B96E98 /* Fixtures.swift */; };
-		BDCBF5E51AF02DB000B96E98 /* CoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBF5E01AF02DB000B96E98 /* CoderTests.swift */; };
-		BDCBF5E71AF02DB000B96E98 /* StoreURLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBF5E21AF02DB000B96E98 /* StoreURLTests.swift */; };
-		BDCBF5E81AF02DB000B96E98 /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBF5E31AF02DB000B96E98 /* StackTests.swift */; };
+		BDCBF5E51AF02DB000B96E98 /* Coder.Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBF5E01AF02DB000B96E98 /* Coder.Tests.swift */; };
+		BDCBF5E71AF02DB000B96E98 /* Store.URL.Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBF5E21AF02DB000B96E98 /* Store.URL.Tests.swift */; };
+		BDCBF5E81AF02DB000B96E98 /* Stack.Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBF5E31AF02DB000B96E98 /* Stack.Tests.swift */; };
 		BDE2ABBE1AEB949400D9D8CF /* Persistent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE2ABB21AEB949300D9D8CF /* Persistent.framework */; };
 		BDE2ABD41AEB951000D9D8CF /* Persistent.h in Headers */ = {isa = PBXBuildFile; fileRef = BDE2ABD31AEB951000D9D8CF /* Persistent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BDE2ABE31AEB95CE00D9D8CF /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE2ABD91AEB95CE00D9D8CF /* Context.swift */; };
@@ -46,11 +46,11 @@
 		BD1B22E51AF17ED900C87782 /* Test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Test.xcdatamodel; sourceTree = "<group>"; };
 		BD4BDD6C1AEEE8780076F70F /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		BD9B65E31AF1869D009A2101 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		BDCBF5DB1AF02C8600B96E98 /* QueryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryTests.swift; sourceTree = "<group>"; };
+		BDCBF5DB1AF02C8600B96E98 /* Query.Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.Tests.swift; sourceTree = "<group>"; };
 		BDCBF5DF1AF02DB000B96E98 /* Fixtures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fixtures.swift; sourceTree = "<group>"; };
-		BDCBF5E01AF02DB000B96E98 /* CoderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoderTests.swift; sourceTree = "<group>"; };
-		BDCBF5E21AF02DB000B96E98 /* StoreURLTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreURLTests.swift; sourceTree = "<group>"; };
-		BDCBF5E31AF02DB000B96E98 /* StackTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackTests.swift; sourceTree = "<group>"; };
+		BDCBF5E01AF02DB000B96E98 /* Coder.Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coder.Tests.swift; sourceTree = "<group>"; };
+		BDCBF5E21AF02DB000B96E98 /* Store.URL.Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.URL.Tests.swift; sourceTree = "<group>"; };
+		BDCBF5E31AF02DB000B96E98 /* Stack.Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.Tests.swift; sourceTree = "<group>"; };
 		BDE2ABB21AEB949300D9D8CF /* Persistent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Persistent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE2ABBD1AEB949400D9D8CF /* PersistentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PersistentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE2ABCF1AEB94F300D9D8CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -124,10 +124,10 @@
 			isa = PBXGroup;
 			children = (
 				BDCBF5DF1AF02DB000B96E98 /* Fixtures.swift */,
-				BDCBF5E01AF02DB000B96E98 /* CoderTests.swift */,
-				BDCBF5DB1AF02C8600B96E98 /* QueryTests.swift */,
-				BDCBF5E31AF02DB000B96E98 /* StackTests.swift */,
-				BDCBF5E21AF02DB000B96E98 /* StoreURLTests.swift */,
+				BDCBF5E01AF02DB000B96E98 /* Coder.Tests.swift */,
+				BDCBF5DB1AF02C8600B96E98 /* Query.Tests.swift */,
+				BDCBF5E31AF02DB000B96E98 /* Stack.Tests.swift */,
+				BDCBF5E21AF02DB000B96E98 /* Store.URL.Tests.swift */,
 				BDCBF5DD1AF02C9000B96E98 /* Resources */,
 			);
 			path = Tests;
@@ -311,11 +311,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDCBF5DE1AF02CB400B96E98 /* QueryTests.swift in Sources */,
-				BDCBF5E81AF02DB000B96E98 /* StackTests.swift in Sources */,
-				BDCBF5E51AF02DB000B96E98 /* CoderTests.swift in Sources */,
+				BDCBF5DE1AF02CB400B96E98 /* Query.Tests.swift in Sources */,
+				BDCBF5E81AF02DB000B96E98 /* Stack.Tests.swift in Sources */,
+				BDCBF5E51AF02DB000B96E98 /* Coder.Tests.swift in Sources */,
 				BD1B22E61AF17ED900C87782 /* Test.xcdatamodeld in Sources */,
-				BDCBF5E71AF02DB000B96E98 /* StoreURLTests.swift in Sources */,
+				BDCBF5E71AF02DB000B96E98 /* Store.URL.Tests.swift in Sources */,
 				BDCBF5E41AF02DB000B96E98 /* Fixtures.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
